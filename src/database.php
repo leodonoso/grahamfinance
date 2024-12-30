@@ -7,7 +7,7 @@
 
     try {
         $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
-        // echo"Connected to the database. ✅";
+        echo"Connected to the database. ✅";
     } catch (mysqli_sql_exception) {
         echo"Could not connect to the database. ❌";
     }

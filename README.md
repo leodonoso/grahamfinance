@@ -14,3 +14,10 @@ It's an app for my personal finances. It should keep track of all my costs and e
 - [ ] Scaffold basic UI.
 - [ ] Attach database to UI.
 - [ ] Set up database.
+
+- Title
+- Description
+- Why?
+- Quickstart
+- Usage
+
