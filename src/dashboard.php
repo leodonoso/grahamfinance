@@ -5,6 +5,30 @@
     $bolivares = 20;
     $efectivo = 20;
     $binance = 20;
+
+    // Budgetting: Calculate how much should I spend on what.
+    $necesidades = $total * 0.5;
+    $deseos = $total * 0.3;
+    $inversiones = $total * 0.2;
+
+    // Gmail Reader.
+    $google_script_url = "https://script.google.com/macros/s/AKfycbx84hjQms94PzhH7tslvQ8dS4hYmzQIwKTNlV2qBwRB-ov_KmI3rAFBoxETsSSpBH9p_g/exec";
+    $limit = 10;
+    $offset = 0;
+
+    $data = array(
+        "action" => "InboxList",
+        "limit"  => $limit,
+        "offset" => $offset
+    );
+
+    $ch = curl_init($google_script_url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+    $result = curl_exec($ch);
+    echo $result;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,6 +77,9 @@
                         <p>$ <?= $efectivo ?> </p>
                     </div>
                 </div>
+
+                <!-- Gmail Experiments -->
+                <h2><?= $google_script_url ?></h2>
             </div>
         </div>
     </div>
