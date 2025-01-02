@@ -41,7 +41,7 @@
 <body class="overflow-x-hidden bg-neutral-50">
     <!-- Nav -->
     <div class="flex flex-col px-8 py-6 items-center justify-center w-screen h-12 text-3xl">
-        <span class="text-yellow-400 font-bold">Graham.</span>
+        <span class="text-yellow-600 font-bold">Graham.</span>
     </div>
     <div class="h-screen flex">
         <!-- Side Nav -->
