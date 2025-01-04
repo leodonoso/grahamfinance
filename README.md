@@ -26,9 +26,3 @@ Graham started as a way for me, a Venezuelan citizen with a job that payed in US
 - [ ] Attach database to UI.
 - [ ] Set up database.
 
-- Title
-- Description
-- Why?
-- Quickstart
-- Usage
-
