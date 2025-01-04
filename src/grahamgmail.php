@@ -11,18 +11,22 @@ use Google\Service\Gmail;
         }
 
         public function read_labels() {
+            $labelsHTML = '';
+
             $service = new Gmail($this->client);
             $user = 'me';
             $results = $service->users_labels->listUsersLabels($user);
 
             if (count($results->getLabels()) == 0) {
-                print "No labels found.\n";
+                $labelsHTML.="<p>No labels found.</p>";
             } else {
-                print "Labels:\n";
+                $labelsHTML.="<p>Labels</p>";
                 foreach ($results->getLabels() as $label) {
-                    printf("- %s\n", $label->getName());
+                    $labelsHTML.="<p>".$label->getName()."</p>";
                 }
             }
+
+            return $labelsHTML;
         }
     }
 ?>
