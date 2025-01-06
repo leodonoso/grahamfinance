@@ -16,7 +16,7 @@
             if ($conn->is_connected()) {
                 require_once("grahamgmail.php");
                 $gmail = new GrahamGmail($conn->get_client());
-                return $gmail->read_labels();
+                return $gmail->list_messages();
             }
             else {
                 return $conn->get_unauthenticated_data();
