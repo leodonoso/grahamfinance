@@ -14,6 +14,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Custom Font: Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Main Head -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="output.css">
@@ -21,12 +26,18 @@
 </head>
 <body class="overflow-x-hidden bg-neutral-50">
     <!-- Nav -->
-    <div class="flex flex-col px-8 py-6 items-center justify-center w-screen h-12 text-3xl">
-        <span class="text-yellow-600 font-bold">Graham.</span>
-    </div>
+    <?php include "nav.php" ?>
+    <!-- Main Page -->
     <div class="h-screen flex">
         <!-- Side Nav -->
-        <div class="w-1/6 p-6 flex flex-col items-center">Side Nav</div>
+        <div class="w-1/6 p-6 flex flex-col items-center">
+            <p>Dashboard</p>
+            <p>Assets</p>
+            <p>Investments</p>
+            <p>Withdraw</p>
+            <p>Account</p>
+            <p>Settings</p>
+        </div>
         <div class="flex flex-col w-5/6">
             <!-- Total Balance -->
             <div class="h-1/4 mx-6 my-3 mt-2 rounded-lg px-6 py-4 border-2 border-neutral-200">
@@ -59,8 +70,6 @@
                     </div>
                 </div>
 
-                <!-- Gmail Experiments -->
-                <h2><?= $google_script_url ?></h2>
             </div>
         </div>
     </div>
