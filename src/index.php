@@ -33,3 +33,4 @@
     </div>
 </body>
 </html>
+<script src="https://kit.fontawesome.com/2e7c7d277f.js" crossorigin="anonymous"></script>

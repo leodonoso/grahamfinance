@@ -1,4 +1,8 @@
 <?php 
+    include "svgs.php";
+
+    $icons = new Icons();
+
     $total = 100;
     $paypal = 20;
     $zinli = 20;
@@ -23,30 +27,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="output.css">
     <title>Dashboard</title>
+    <script src="https://kit.fontawesome.com/2e7c7d277f.js" crossorigin="anonymous"></script>
+
 </head>
 <body class="overflow-x-hidden bg-neutral-50">
     <!-- Nav -->
     <?php include "nav.php" ?>
     <!-- Main Page -->
-    <div class="h-screen flex">
+    <div class="h-screen flex my-6">
         <!-- Side Nav -->
-        <div class="w-1/6 p-6 flex flex-col items-center">
-            <p>Dashboard</p>
-            <p>Assets</p>
-            <p>Investments</p>
-            <p>Withdraw</p>
-            <p>Account</p>
-            <p>Settings</p>
+        <div class="w-1/6 flex flex-col items-left gap-2">
+            <a href="" class="w-full h-12 hover:bg-neutral-200 flex items-center gap-2 p-6 rounded-lg ml-[-0.5rem] pl-10 transition duration-200 ease-in-out">
+                <div class="w-6 h-6 flex justify-center items-center mr-3">
+                    <?php $icons->home() ?>
+                </div>
+                Dashboard
+            </a>
+            <a href="" class="w-full h-12 hover:bg-neutral-200 flex items-center gap-2 p-6 rounded-lg ml-[-0.5rem] pl-10 transition duration-200 ease-in-out">
+                <div class="w-5 h-6 flex justify-center items-center mr-4">
+                    <?php $icons->wallet() ?>
+                </div>
+                Assets
+            </a>
+            <a href="" class="w-full h-12 hover:bg-neutral-200 flex items-center gap-2 p-6 rounded-lg ml-[-0.5rem] pl-10 transition duration-200 ease-in-out">
+                <div class="w-6 h-6 flex justify-center items-center mr-3">
+                    <?php $icons->investments() ?>
+                </div>
+                Investments
+            </a>
+            <a href="" class="w-full h-12 hover:bg-neutral-200 flex items-center gap-2 p-6 rounded-lg ml-[-0.5rem] pl-10 transition duration-200 ease-in-out">
+                <div class="w-5 h-6 flex justify-center items-center mr-4">
+                    <?php $icons->withdraw() ?>
+                </div>
+                Withdraw
+            </a>
+            <a href="" class="w-full h-12 hover:bg-neutral-200 flex items-center gap-2 p-6 rounded-lg ml-[-0.5rem] pl-10 transition duration-200 ease-in-out">
+                <div class="w-5 h-6 flex justify-center items-center mr-4">
+                    <?php $icons->account() ?>
+                </div>
+                Account
+            </a>
+            <a href="" class="w-full h-12 hover:bg-neutral-200 flex items-center gap-2 p-6 rounded-lg ml-[-0.5rem] pl-10 transition duration-200 ease-in-out">
+                <div class="w-6 h-6 flex justify-center items-center mr-3">
+                    <?php $icons->settings() ?>
+                </div>
+                Settings
+            </a>
         </div>
         <div class="flex flex-col w-5/6">
             <!-- Total Balance -->
-            <div class="h-1/4 mx-6 my-3 mt-2 rounded-lg px-6 py-4 border-2 border-neutral-200">
-                <h3 class="text-xl font-semibold">Saldo Total</h3>
+            <div class="h-1/4 mx-6 rounded-lg px-6 py-4 border-2 border-neutral-200">
+                <h3 class="text-xl font-semibold">Total Balance</h3>
                 <h2 class="text-5xl mt-3 font-bold">$<?= $total ?></h2>
             </div>
             <!-- List of all assets -->
             <div class="h-3/4 mx-6 my-3 rounded-lg px-6 py-4 border-2 border-neutral-200">
-                <h3 class="text-xl font-semibold">Distribución</h3>
+                <h3 class="text-xl font-semibold">Distribution</h3>
                 <div>
                     <div>
                         <h4 class="font-semibold mt-4">Binance</h4>
