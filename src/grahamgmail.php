@@ -58,8 +58,21 @@ use Google\Service\Gmail;
             $j = 0;
             foreach ($messages as $message) {
                 echo 'Message with ID: ' . $message->getId() . '<br/>';
-                $message_get_res = $service->users_messages->   get($user, $message->getId());
-                echo "<pre>".var_export($message_get_res->payload->parts[1]->body->data, true)."</pre>";
+                $message_get_res = $service->users_messages->get($user, $message->getId());
+                $message_parts = $message_get_res->payload->parts;
+                if (count($message_parts) > 0) {
+                    $message_data = $message_parts[1]->body->data;
+                }
+                else {
+                    $message_data = $message_get_res->payload->body->data;
+                }
+
+                // echo "<pre>".var_export($message_get_res->payload->parts[1]->body->data, true)."</pre>";
+                // echo "<pre>".var_export($message_data, true)."</pre>";
+                $decoded_email = str_replace("-", "+", $message_data);
+                $decoded_email = str_replace("_", "/", $decoded_email);
+                echo base64_decode($decoded_email);
+
                 $j++;
                 if ($j == 10) { break; }
             }
